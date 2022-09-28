@@ -37,5 +37,13 @@ print(f.tell())
 #리셋해
 f.seek(0)
 lst = f.readlines()
-print(lst)
+#print(lst)
+for item in lst:
+    print(item, end="")
+
+print("--한줄씩 처리--")
+f.seek(0)
+print(f.readline(), end="")
+print(f.readline(), end="")
+
 f.close()
