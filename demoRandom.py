@@ -2,6 +2,7 @@
 
 from asyncio.constants import LOG_THRESHOLD_FOR_CONNLOST_WRITES
 import random
+from unittest import result
 
 print(random.random())
 print(random.random())
@@ -31,3 +32,6 @@ print("운영체제 : ", name)
 #파일리스트
 import glob
 print( glob.glob("c:\\work\\*.py"))
+result = glob.glob("c:\\work\\*.*")
+for item in result:
+    print(item)
