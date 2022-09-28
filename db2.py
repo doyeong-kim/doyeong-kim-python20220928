@@ -1,7 +1,8 @@
 # db1.py
 import sqlite3
 #연결객체(일단은 메모리에서 작업)
-con = sqlite3.connect(":memory:")
+#실제 물리적잉ㄴ 파일에 저장
+con = sqlite3.connect("c:\\work\\test.db")
 
 #구문을 실행하는 커서
 cur = con.cursor()
@@ -20,14 +21,4 @@ datalist = (("tom","010-123"), ("dsp","010-5678"))
 cur.executemany("insert into PhoneBook values (?,?);" , datalist)
 
 cur.execute("select * from PhoneBook; ")
-# for row in cur:
-#     print(row)
-
-
-print("-----fetchone()----")
-print(cur.fetchone())
-print("-----fetchmany(2)----")
-print(cur.fetchmany(2))
-print("----fetchall()0-----")
 print(cur.fetchall())
-
